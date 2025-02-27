@@ -1,16 +1,16 @@
 {
-  "name": "pxianyu/migrations",
+  "name": "leekung/webman-migrations",
+  "description": "Webman plugin eloquent-ORM migrations",
+  "version": "2.0.0",
   "type": "library",
   "license": "MIT",
-  "description": "Webman plugin eloquent-ORM migrations",
-  "minimum-stability": "stable",
   "require": {
-    "php": ">=7.2",
-    "workerman/webman-framework": "^1.4.0",
+    "php": ">=8.0",
+    "workerman/webman-framework": ">=1.4.0",
     "webman/console": "^1.0",
-    "illuminate/database": "^8.0|^9.0|^10.0",
-    "illuminate/console": "^8.0|^9.0|^10.0",
-    "illuminate/filesystem": "^8.0|^9.0|^10.0"
+    "illuminate/database": ">=8.0",
+    "illuminate/console": ">=8.0",
+    "illuminate/filesystem": ">=8.0"
   },
   "autoload": {
     "psr-4": {

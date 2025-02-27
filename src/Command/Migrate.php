@@ -31,7 +31,7 @@ class Migrate extends AbstractCommand
         parent::configure();
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->bootstrap($input, $output);
 
@@ -40,7 +40,7 @@ class Migrate extends AbstractCommand
         }
         $migrationPath=$this->getMigrationPath();
         if ($input->getOption('path')) {
-            $migrationPath = $migrationPath.DIRECTORY_SEPARATOR.$input->getOption('path');
+            $migrationPath = $input->getOption('path');
         }
         $this->repository = new DatabaseMigrationRepository($this->getDb(), $this->getMigrationTable());
         $this->migrator = new Migrator($this->repository, $this->getDb(), new Filesystem());
