@@ -24,6 +24,14 @@ class RunSeed extends AbstractCommand
         parent::configure();
     }
 
+    protected function loadConfig(InputInterface $input): void
+    {
+        if (!$input->hasParameterOption('--database') && !$input->hasParameterOption('-d')) {
+            $input->setOption('database', config('database.default'));
+        }
+        parent::loadConfig($input);
+    }
+
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->bootstrap($input, $output);
